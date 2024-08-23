@@ -1,4 +1,4 @@
-import 'package:demo_app/pages/home/home_page.dart';
+import 'package:demo_app/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 class RootPage extends StatefulWidget {
@@ -10,7 +10,7 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   List<Widget> listBody = [
-    const HomePage(),
+    const LoginPage(),
   ];
 
   int indexPage = 0;

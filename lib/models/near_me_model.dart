@@ -1,7 +1,24 @@
-import 'package:demo_app/models/new_me_model.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+class NearMeModel {
+  String name;
+  String item;
+  String image;
+  String rp;
+  String time;
+  String evaluate;
 
-List<NewMeModel> mockupNewMeData = [
-  NewMeModel(
+  NearMeModel({
+    required this.name,
+    required this.image,
+    required this.item,
+    required this.rp,
+    required this.time,
+    required this.evaluate,
+  });
+}
+
+List<NearMeModel> mockupNearMeData = [
+  NearMeModel(
     name: 'Bubur Ayam Pak Yono',
     image: 'assets/image/Bubur Ayam Pak Yono.png',
     item: 'Porridge, Rice, Chicken,',
@@ -9,7 +26,7 @@ List<NewMeModel> mockupNewMeData = [
     time: '12 min • 1 km',
     evaluate: '4.9 • 400+ ratings',
   ),
-  NewMeModel(
+  NearMeModel(
     name: 'Sate Kambing Pak Slamet',
     image: 'assets/image/Sate Kambing Pak Slamet.png',
     item: 'Satai, Chicken, Meat',
@@ -17,7 +34,7 @@ List<NewMeModel> mockupNewMeData = [
     time: '12 min • 1.2 km',
     evaluate: '4.7 • 200+ ratings',
   ),
-  NewMeModel(
+  NearMeModel(
     name: 'Bakmi Ayam Bangka 78',
     image: 'assets/image/Bakmi Ayam Bangka.png',
     item: 'Noodle, Chicken',

@@ -1,7 +1,10 @@
 import 'package:demo_app/apps/routers/router_name.dart';
 import 'package:demo_app/pages/category/category_page.dart';
 import 'package:demo_app/pages/detail/detail_page.dart';
+import 'package:demo_app/pages/detail_resto/detail_resto_page.dart';
 import 'package:demo_app/pages/home/home_page.dart';
+import 'package:demo_app/pages/login/login_page.dart';
+import 'package:demo_app/pages/near_me.dart/near_me_page.dart';
 import 'package:demo_app/pages/product/product_page.dart';
 import 'package:demo_app/pages/search/search_page.dart';
 import 'package:flutter/material.dart';
@@ -54,14 +57,19 @@ class RouterCustom {
           ),
           type: PageTransitionType.rightToLeft,
         );
-      case RouterName.newmePage:
-        print(settings.arguments);
-        String title = settings.arguments as String;
-
+      case RouterName.nearmePage:
         return PageTransition(
-          child: SearchPage(
-            title: title,
-          ),
+          child: const NearMePage(),
+          type: PageTransitionType.rightToLeft,
+        );
+      case RouterName.detailRestoPage:
+        return PageTransition(
+          child: const DetailRestoPage(),
+          type: PageTransitionType.rightToLeft,
+        );
+      case RouterName.loginPgae:
+        return PageTransition(
+          child: const LoginPage(),
           type: PageTransitionType.rightToLeft,
         );
       default:

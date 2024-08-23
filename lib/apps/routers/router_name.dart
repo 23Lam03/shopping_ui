@@ -4,5 +4,7 @@ class RouterName {
   static const detailPage = '/detailPage';
   static const searchPage = '/searchPage';
   static const categoryPage = '/categoryPage';
-  static const newmePage = '/newmePage';
+  static const nearmePage = '/nearmePage';
+  static const detailRestoPage = '/detailRestoPage ';
+  static const loginPgae = '/loginPage';
 }
