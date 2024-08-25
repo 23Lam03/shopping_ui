@@ -1,3 +1,4 @@
+import 'package:demo_app/apps/routers/router_name.dart';
 import 'package:demo_app/models/detail_resto_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,15 +28,23 @@ class DetailRestoCategory extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  clipBehavior: Clip.hardEdge,
-                  child: Image.asset(
-                    mockupDetailRestoData[index].image,
-                    fit: BoxFit.cover,
+                child: InkWell(
+                  onTap: () {
+                    if (index == 1) {
+                      Navigator.pushNamed(
+                          context, RouterName.detailMakananPage);
+                    }
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image.asset(
+                      mockupDetailRestoData[index].image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

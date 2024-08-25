@@ -1,6 +1,7 @@
 import 'package:demo_app/apps/routers/router_name.dart';
 import 'package:demo_app/pages/category/category_page.dart';
 import 'package:demo_app/pages/detail/detail_page.dart';
+import 'package:demo_app/pages/detail_makanan/detail_makanan_page.dart';
 import 'package:demo_app/pages/detail_resto/detail_resto_page.dart';
 import 'package:demo_app/pages/home/home_page.dart';
 import 'package:demo_app/pages/login/login_page.dart';
@@ -70,6 +71,11 @@ class RouterCustom {
       case RouterName.loginPgae:
         return PageTransition(
           child: const LoginPage(),
+          type: PageTransitionType.rightToLeft,
+        );
+      case RouterName.detailMakananPage:
+        return PageTransition(
+          child: const DetailMakananPage(),
           type: PageTransitionType.rightToLeft,
         );
       default:
