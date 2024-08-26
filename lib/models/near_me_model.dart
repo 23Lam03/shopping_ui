@@ -6,6 +6,7 @@ class NearMeModel {
   String rp;
   String time;
   String evaluate;
+  String type;
 
   NearMeModel({
     required this.name,
@@ -14,6 +15,7 @@ class NearMeModel {
     required this.rp,
     required this.time,
     required this.evaluate,
+    this.type = 'Best Seller',
   });
 }
 

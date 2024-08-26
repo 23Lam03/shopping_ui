@@ -8,6 +8,7 @@ class InputCustom extends StatefulWidget {
     this.hintText,
     this.obscureText = false,
     this.controller,
+    required String? Function(dynamic value) validator,
   });
 
   Widget? prefixIcon;

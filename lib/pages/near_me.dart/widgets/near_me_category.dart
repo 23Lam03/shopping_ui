@@ -27,14 +27,80 @@ class NearMeCategory extends StatelessWidget {
                     Navigator.pushNamed(context, RouterName.detailRestoPage);
                   }
                 },
-                child: Container(
-                  width: 124.dg,
-                  height: 164.dg,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.dg),
-                  ),
-                  clipBehavior: Clip.hardEdge,
-                  child: Image.asset(mockupNearMeData[index].image),
+                child: Stack(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        width: 124.dg,
+                        height: 164.dg,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.dg),
+                        ),
+                        clipBehavior: Clip.hardEdge,
+                        child: Image.asset(mockupNearMeData[index].image),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 8,
+                      left: 5,
+                      right: 5,
+                      child: mockupNearMeData[index].type == 'Best Seller'
+                          ? Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6, vertical: 4),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(1000),
+                                color: const Color(0xffFFFFFF),
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 20,
+                                    height: 20,
+                                    child: Image.asset(
+                                        'assets/image/BestSellericon.png'),
+                                  ),
+                                  4.horizontalSpace,
+                                  Text(
+                                    'Best Seller',
+                                    style: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12,
+                                      color: const Color(0xff121212),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6, vertical: 4),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(1000),
+                                color: const Color(0xffFFFFFF),
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 20,
+                                    height: 20,
+                                    child:
+                                        Image.asset('assets/image/Promo.png'),
+                                  ),
+                                  4.horizontalSpace,
+                                  Text(
+                                    'Promo',
+                                    style: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12,
+                                      color: const Color(0xff121212),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                    ),
+                  ],
                 ),
               ),
               Padding(

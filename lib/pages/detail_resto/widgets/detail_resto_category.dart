@@ -35,16 +35,57 @@ class DetailRestoCategory extends StatelessWidget {
                           context, RouterName.detailMakananPage);
                     }
                   },
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    clipBehavior: Clip.hardEdge,
-                    child: Image.asset(
-                      mockupDetailRestoData[index].image,
-                      fit: BoxFit.cover,
-                    ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 132,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        clipBehavior: Clip.hardEdge,
+                        child: Image.asset(
+                          mockupDetailRestoData[index].image,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 50,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 6, vertical: 4),
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(12),
+                                bottomLeft: Radius.circular(12)),
+                            color: Color(0xffFF7916),
+                          ),
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: Icon(
+                                  Icons.stars,
+                                  color: Color(0xffFFFFFF),
+                                ),
+                              ),
+                              4.horizontalSpace,
+                              Text(
+                                'Best Seller',
+                                style: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12,
+                                  color: const Color(0xff121212),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

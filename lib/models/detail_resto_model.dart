@@ -3,7 +3,6 @@ class DetailRestoModel {
   String item;
   String rp;
   String image;
-  int? quantity;
 
   DetailRestoModel({
     required this.name,

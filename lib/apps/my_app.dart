@@ -1,5 +1,5 @@
-import 'package:demo_app/apps/root_page.dart';
 import 'package:demo_app/apps/routers/router_custom.dart';
+import 'package:demo_app/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loader_overlay/loader_overlay.dart';
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             ),
           );
         },
-        child: const RootPage(),
+        child: const LoginPage(),
       ),
     );
   }

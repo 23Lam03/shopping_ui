@@ -19,10 +19,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController emailContronler = TextEditingController();
-  TextEditingController passwordContronler = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+
   void submit() async {
     context.loaderOverlay.show();
 
@@ -40,12 +41,11 @@ class _LoginPageState extends State<LoginPage> {
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
-        // FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Scaffold(
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   'Login',
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w400,
-                    fontSize: 100,
+                    fontSize: 40.sp,
                     color: const Color(0xffD2D8EC),
                   ),
                 ),
@@ -62,19 +62,37 @@ class _LoginPageState extends State<LoginPage> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      //email
+                      // email
                       InputCustom(
-                        controller: emailContronler,
+                        controller: emailController,
                         prefixIcon: const Icon(Icons.email),
                         hintText: 'Email',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                          }
+                          if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                            return 'Please enter a valid email';
+                          }
+                          return null;
+                        },
                       ),
                       14.verticalSpace,
-                      //paswword
+                      // password
                       InputCustom(
-                        controller: passwordContronler,
+                        controller: passwordController,
                         prefixIcon: const Icon(Icons.lock),
                         hintText: 'Password',
                         obscureText: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          if (value.length < 6) {
+                            return 'Password must be at least 6 characters long';
+                          }
+                          return null;
+                        },
                       ),
                       44.verticalSpace,
                       const LoginForgotPassword(),
