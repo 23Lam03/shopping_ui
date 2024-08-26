@@ -35,6 +35,7 @@ List<NearMeModel> mockupNearMeData = [
     rp: 'Rp 10.000',
     time: '12 min • 1.2 km',
     evaluate: '4.7 • 200+ ratings',
+    type: 'Promo',
   ),
   NearMeModel(
     name: 'Bakmi Ayam Bangka 78',
