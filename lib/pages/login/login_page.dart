@@ -43,76 +43,83 @@ class _LoginPageState extends State<LoginPage> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'Login',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 40.sp,
-                    color: const Color(0xffD2D8EC),
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  40.verticalSpace,
+                  Text(
+                    'Login',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 40.sp,
+                      color: const Color(0xffD2D8EC),
+                    ),
                   ),
-                ),
-                25.verticalSpace,
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      // email
-                      InputCustom(
-                        controller: emailController,
-                        prefixIcon: const Icon(Icons.email),
-                        hintText: 'Email',
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
-                          }
-                          if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                            return 'Please enter a valid email';
-                          }
-                          return null;
-                        },
-                      ),
-                      14.verticalSpace,
-                      // password
-                      InputCustom(
-                        controller: passwordController,
-                        prefixIcon: const Icon(Icons.lock),
-                        hintText: 'Password',
-                        obscureText: true,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
-                          }
-                          if (value.length < 6) {
-                            return 'Password must be at least 6 characters long';
-                          }
-                          return null;
-                        },
-                      ),
-                      44.verticalSpace,
-                      const LoginForgotPassword(),
-                      25.verticalSpace,
-                      LoginButton(
-                        onTap: submit,
-                      ),
-                    ],
+                  25.verticalSpace,
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        // email
+                        InputCustom(
+                          controller: emailController,
+                          prefixIcon: const Icon(Icons.email),
+                          hintText: 'Email',
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your email';
+                            }
+                            if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                                .hasMatch(value)) {
+                              return 'Please enter a valid email';
+                            }
+                            return null;
+                          },
+                        ),
+                        14.verticalSpace,
+                        // password
+                        InputCustom(
+                          controller: passwordController,
+                          prefixIcon: const Icon(Icons.lock),
+                          hintText: 'Password',
+                          obscureText: true,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your password';
+                            }
+                            if (value.length < 6) {
+                              return 'Password must be at least 6 characters long';
+                            }
+                            return null;
+                          },
+                        ),
+                        44.verticalSpace,
+                        const LoginForgotPassword(),
+                        25.verticalSpace,
+                        LoginButton(
+                          onTap: submit,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                25.verticalSpace,
-                const LoginGoogle(),
-                25.verticalSpace,
-                const LoginApple(),
-                25.verticalSpace,
-                const LoginOr(),
-                25.verticalSpace,
-                const LoginSignUp(),
-                58.verticalSpace,
-              ],
+                  25.verticalSpace,
+                  const LoginGoogle(),
+                  25.verticalSpace,
+                  const LoginApple(),
+                  25.verticalSpace,
+                  const LoginOr(),
+                  25.verticalSpace,
+                  const LoginSignUp(),
+                  58.verticalSpace,
+                ],
+              ),
             ),
           ),
         ),
